@@ -12,18 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UrunPage extends AbstractPage{
 
-    //WebDriver driver;
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public UrunPage(WebDriver driver) {
         super(driver);
-
     }
 
-    public void ikinciSayfatikla() throws InterruptedException {
+    public void ikinciSayfatikla() {
 
         wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.ikincisayfa));
-        //Thread.sleep(4000);
         String hakkimizdatext = driver.findElement(UrunPageObject.sayfalar).getText();
         log.info(hakkimizdatext);
         wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.ikincisayfa));
@@ -34,8 +31,8 @@ public class UrunPage extends AbstractPage{
     }
 
     public void urunSec () throws InterruptedException {
-        Thread.sleep(2000);
-        //wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.urun)).isDisplayed();
+
+        wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.urun));
         WebElement urun = driver.findElement(UrunPageObject.urun);
         Actions actions = new Actions(driver);
         actions.moveToElement(urun).perform();
