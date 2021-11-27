@@ -23,7 +23,7 @@ public class UrunPage extends AbstractPage{
     public void ikinciSayfatikla() throws InterruptedException {
 
         wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.ikincisayfa));
-        Thread.sleep(4000);
+        //Thread.sleep(4000);
         String hakkimizdatext = driver.findElement(UrunPageObject.sayfalar).getText();
         log.info(hakkimizdatext);
         wait.until(ExpectedConditions.elementToBeClickable(UrunPageObject.ikincisayfa));
@@ -49,15 +49,14 @@ public class UrunPage extends AbstractPage{
         Thread.sleep(2000);
     }
 
-    public String urunFiyatiAl() throws InterruptedException {
-        String price = driver.findElement(UrunPageObject.prcie).getText();
+    public String urunFiyatiAl(){
+
+        String price = driver.findElement(UrunPageObject.price).getText();
         log.info(price);
         String urunAdi = driver.findElement(UrunPageObject.urunAdi).getText();
         log.info(urunAdi);
-        Thread.sleep(2000);
         String srs = driver.findElement(UrunPageObject.srs).getText();
         log.info(srs);
-
         return price;
 
     }
@@ -67,14 +66,16 @@ public class UrunPage extends AbstractPage{
         WebElement urunEkrani = driver.findElement(UrunPageObject.urunEkleekrani);
         Actions actionsssss = new Actions(driver);
         actionsssss.moveToElement(urunEkrani);
-        actionsssss.click().build().perform();
-
+        //actionsssss.click().build().perform();
+        WebElement cerezKapatBtn = driver.findElement(UrunPageObject.cerezKapat);
+        cerezKapatBtn.click();
         WebElement asd = driver.findElement(UrunPageObject.sepeteekleBtn);
-        Actions actionssss = new Actions(driver);
-        actionssss.moveToElement(asd);
-        actionssss.click().build().perform();
-        log.info("Çerezler popup kapatıldı.");
-        actionssss.click().build().perform();
+        asd.click();
+//        Actions actionssss = new Actions(driver);
+//        actionssss.moveToElement(asd);
+//        actionssss.click().build().perform();
+//        log.info("Çerezler popup kapatıldı.");
+//        actionssss.click().build().perform();
         log.info("sepete eklendi");
 
         Thread.sleep(2000);

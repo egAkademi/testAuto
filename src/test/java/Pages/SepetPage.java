@@ -25,8 +25,8 @@ public class SepetPage extends AbstractPage{
         Select se = new Select(driver.findElement(SepetObject.drpdwnAdet));
         se.selectByValue("2");
         Thread.sleep(2000);
-        WebElement sadf = driver.findElement(SepetObject.bos);
-        sadf.click();
+//        WebElement sadf = driver.findElement(SepetObject.bos);
+//        sadf.click();
     }
 
     public String adetAmount(){

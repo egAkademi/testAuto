@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class SepetObject {
 
-    public static final By sepetFiyatitxt = By.cssSelector("[class='real-discounted-price']");
+    public static final By sepetFiyatitxt = By.cssSelector("[class='total-price']");
     public static final By drpdwnAdet = By.cssSelector("[class='amount']");
     public static final By adetAmount = By.cssSelector("[class='amount']");
     public static final By bos = By.cssSelector("[class='gg-w-24 gg-d-24 gg-t-24 gg-m-24'] [id='cart-items-container']");
